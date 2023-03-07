@@ -8,12 +8,10 @@ SERVER_PORT = 8002
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((SERVER_HOST, SERVER_PORT))
 
-
 def recv():
     while (True):
-        msg = client_socket.recv(4096)
-        print("RECV:", msg)
-        pyperclip.copy(msg)
+        msg = client_socket.recv(1024)
+        pyperclip.copy(str(msg))
 
 
 recv_thread = threading.Thread(target=recv)
@@ -21,4 +19,4 @@ recv_thread.start()
 
 while True:
     content = pyperclip.waitForNewPaste()
-    client_socket.send(content.encode("utf-8"))
+    client_socket.send(content.encode())
