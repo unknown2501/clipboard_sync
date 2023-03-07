@@ -1,7 +1,7 @@
 import socket
 import threading
 
-SERVER_HOST = '0,0,0,0'
+SERVER_HOST = '0.0.0.0'
 SERVER_PORT = 8002
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
