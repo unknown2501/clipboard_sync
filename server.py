@@ -21,6 +21,7 @@ def handle_client(client_socket, client_addr):
     clients.append(client_socket)
     while True:
         msg = client_socket.recv(4096)
+        print(f"msg from{client_addr}: {msg}")
         broadcast(msg, client_socket)
 
 
