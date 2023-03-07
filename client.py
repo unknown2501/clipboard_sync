@@ -21,4 +21,4 @@ recv_thread.start()
 
 while True:
     content = pyperclip.waitForNewPaste()
-    client_socket.send(msg.encode("utf-8"))
+    client_socket.send(content.encode("utf-8"))
